@@ -1,0 +1,503 @@
+add_global_arguments
+  language: list[str]
+  native: bool
+add_global_link_arguments
+  language: list[str]
+  native: bool
+add_languages
+  native: bool
+  required: bool
+add_project_arguments
+  language: list[str]
+  native: bool
+add_project_dependencies
+  language: list[str]
+  native: bool
+add_project_link_arguments
+  language: list[str]
+  native: bool
+add_test_setup
+  env: env|list[str]
+  exclude_suites: list[str]
+  exe_wrapper: list[external_program|str]
+  gdb: bool
+  is_default: bool
+  timeout_multiplier: int
+alias_target
+assert
+benchmark
+  args: list[file|str|tgt]
+  depends: list[build_tgt|custom_tgt]
+  env: env|list[str]
+  priority: int
+  protocol: str
+  should_fail: bool
+  suite: list[str]|str
+  timeout: int
+  verbose: bool
+  workdir: str
+both_libraries
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  darwin_versions: int|list[str]|str
+  dependencies: list[dep]
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  pic: bool
+  prelink: bool
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  soversion: int|str
+  version: str
+  vs_module_defs: custom_idx|custom_tgt|file|str
+  win_subsystem: str
+build_target
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  darwin_versions: int|list[str]|str
+  dependencies: list[dep]
+  export_dynamic: bool
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implib: bool|str
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  java_resources: structured_src
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  main_class: str
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  pic: bool
+  pie: bool
+  prelink: bool
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  soversion: int|str
+  target_type: str
+  version: str
+  vs_module_defs: custom_idx|custom_tgt|file|str
+  win_subsystem: str
+configuration_data
+configure_file
+  capture: bool
+  command: list[file|str]
+  configuration: cfg_data|dict[bool|int|str]
+  copy: bool
+  depfile: str
+  encoding: str
+  format: str
+  input: file|str
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_tag: str
+  output: str
+  output_format: str
+custom_target
+  build_always: bool
+  build_always_stale: bool
+  build_by_default: bool
+  capture: bool
+  command: list[exe|external_program|file|str]
+  console: bool
+  depend_files: list[file|str]
+  depends: list[build_tgt|custom_tgt]
+  depfile: str
+  env: env|list[str]
+  feed: bool
+  input: list[file|str]
+  install: bool
+  install_dir: list[str]|str
+  install_mode: list[int|str]
+  install_tag: list[str]
+  output: list[str]
+debug
+declare_dependency
+  compile_args: list[str]
+  d_import_dirs: list[inc|str]
+  d_module_versions: list[str]|str
+  dependencies: list[dep]
+  include_directories: list[inc|str]
+  link_args: list[str]
+  link_whole: list[lib]
+  link_with: list[lib]
+  sources: list[file|str]
+  variables: dict[str]
+  version: str
+dependency
+  allow_fallback: bool
+  default_options: list[str]
+  disabler: bool
+  fallback: list[str]
+  include_type: str
+  language: str
+  method: str
+  native: bool
+  not_found_message: str
+  required: bool|feature
+  static: bool
+  version: str
+disabler
+environment
+  method: str
+  separator: str
+error
+executable
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  dependencies: list[dep]
+  export_dynamic: bool
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implib: bool|str
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  pie: bool
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  win_subsystem: str
+files
+find_program
+  dirs: list[str]
+  disabler: bool
+  native: bool
+  required: bool|feature
+  version: str
+generator
+  arguments: list[str]
+  capture: bool
+  depends: list[build_tgt|custom_tgt]
+  depfile: str
+  output: list[str]
+get_option
+get_variable
+import
+  disabler: bool
+  required: bool|feature
+include_directories
+  is_system: bool
+install_data
+  install_dir: str
+  install_mode: list[int|str]
+  install_tag: str
+  rename: list[str]
+  sources: list[file|str]
+install_emptydir
+  install_mode: list[int|str]
+  install_tag: str
+install_headers
+  install_dir: str
+  install_mode: list[int|str]
+  subdir: str
+install_man
+  install_dir: str
+  install_mode: list[int|str]
+  locale: str
+install_subdir
+  exclude_directories: list[str]
+  exclude_files: list[str]
+  install_dir: str
+  install_mode: list[int|str]
+  install_tag: str
+  strip_directory: bool
+install_symlink
+  install_dir: str
+  install_tag: str
+  pointing_to: str
+is_disabler
+is_variable
+jar
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  dependencies: list[dep]
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  java_resources: structured_src
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  main_class: str
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  win_subsystem: str
+join_paths
+library
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  darwin_versions: int|list[str]|str
+  dependencies: list[dep]
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  pic: bool
+  prelink: bool
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  soversion: int|str
+  version: str
+  vs_module_defs: custom_idx|custom_tgt|file|str
+  win_subsystem: str
+message
+project
+  default_options: list[str]
+  license: list[str]|str
+  meson_version: str
+  subproject_dir: str
+  version: file|str
+range
+run_command
+  capture: bool
+  check: bool
+  env: env|list[str]
+run_target
+  command: list[custom_tgt|exe|external_program|file|str]
+  depends: list[build_tgt|custom_tgt]
+  env: env|list[str]
+set_variable
+shared_library
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  darwin_versions: int|list[str]|str
+  dependencies: list[dep]
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  soversion: int|str
+  version: str
+  vs_module_defs: custom_idx|custom_tgt|file|str
+  win_subsystem: str
+shared_module
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  dependencies: list[dep]
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  vs_module_defs: custom_idx|custom_tgt|file|str
+  win_subsystem: str
+static_library
+  <lang>_args: list[str]
+  <lang>_pch: str
+  build_by_default: bool
+  build_rpath: str
+  d_debug: list[str]
+  d_import_dirs: list[str]
+  d_module_versions: list[str]
+  d_unittest: bool
+  dependencies: list[dep]
+  extra_files: custom_idx|custom_tgt|file|str
+  gnu_symbol_visibility: str
+  gui_app: bool
+  implicit_include_directories: bool
+  include_directories: list[inc|str]
+  install: bool
+  install_dir: str
+  install_mode: list[int|str]
+  install_rpath: str
+  install_tag: str
+  link_args: list[str]
+  link_depends: custom_idx|custom_tgt|file|str
+  link_language: str
+  link_whole: list[custom_idx|custom_tgt|lib]
+  link_with: list[custom_idx|custom_tgt|lib]
+  name_prefix: list[void]|str
+  name_suffix: list[void]|str
+  native: bool
+  objects: list[extracted_obj]
+  override_options: list[str]
+  pic: bool
+  prelink: bool
+  rust_crate_type: str
+  sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+  win_subsystem: str
+structured_sources
+subdir
+  if_found: list[dep]
+subdir_done
+subproject
+  default_options: list[str]
+  required: bool|feature
+  version: str
+summary
+  bool_yn: bool
+  list_sep: str
+  section: str
+test
+  args: list[file|str|tgt]
+  depends: list[build_tgt|custom_tgt]
+  env: env|list[str]
+  is_parallel: bool
+  priority: int
+  protocol: str
+  should_fail: bool
+  suite: list[str]|str
+  timeout: int
+  verbose: bool
+  workdir: str
+unset_variable
+vcs_tag
+  command: list[custom_tgt|exe|external_program|file|str]
+  fallback: str
+  input: str
+  output: str
+  replace_string: str
+warning
