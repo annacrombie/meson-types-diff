@@ -1,0 +1,1565 @@
+add_global_arguments
+  varargs:
+    str
+  kwargs:
+    language: list[str]
+    native: bool
+  returns:
+    void
+add_global_link_arguments
+  varargs:
+    str
+  kwargs:
+    language: list[str]
+    native: bool
+  returns:
+    void
+add_languages
+  varargs:
+    str
+  kwargs:
+    native: bool
+    required: bool
+  returns:
+    bool
+add_project_arguments
+  varargs:
+    str
+  kwargs:
+    language: list[str]
+    native: bool
+  returns:
+    void
+add_project_dependencies
+  varargs:
+    dep
+  kwargs:
+    language: list[str]
+    native: bool
+  returns:
+    void
+add_project_link_arguments
+  varargs:
+    str
+  kwargs:
+    language: list[str]
+    native: bool
+  returns:
+    void
+add_test_setup
+  posargs:
+    str
+  kwargs:
+    env: dict[str]|env|list[str]
+    exclude_suites: list[str]
+    exe_wrapper: list[external_program|str]
+    gdb: bool
+    is_default: bool
+    timeout_multiplier: int
+  returns:
+    void
+alias_target
+  posargs:
+    str
+  varargs:
+    tgt
+  returns:
+    alias_tgt
+assert
+  posargs:
+    bool
+  optargs:
+    str
+  returns:
+    void
+benchmark
+  posargs:
+    str
+    exe|external_program|file|jar
+  kwargs:
+    args: list[file|str|tgt]
+    depends: list[build_tgt|custom_tgt]
+    env: dict[str]|env|list[str]
+    priority: int
+    protocol: str
+    should_fail: bool
+    suite: list[str]|str
+    timeout: int
+    verbose: bool
+    workdir: str
+  returns:
+    void
+both_libraries
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    darwin_versions: int|list[str]|str
+    dependencies: list[dep]
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    pic: bool
+    prelink: bool
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    soversion: int|str
+    version: str
+    vs_module_defs: custom_idx|custom_tgt|file|str
+    win_subsystem: str
+  returns:
+    both_libs
+build_target
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    darwin_versions: int|list[str]|str
+    dependencies: list[dep]
+    export_dynamic: bool
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implib: bool|str
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    java_resources: structured_src
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    main_class: str
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    pic: bool
+    pie: bool
+    prelink: bool
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    soversion: int|str
+    target_type: str
+    version: str
+    vs_module_defs: custom_idx|custom_tgt|file|str
+    win_subsystem: str
+  returns:
+    build_tgt
+configuration_data
+  optargs:
+    dict[bool|int|str]
+  returns:
+    cfg_data
+configure_file
+  kwargs:
+    capture: bool
+    command: list[file|str]
+    configuration: cfg_data|dict[bool|int|str]
+    copy: bool
+    depfile: str
+    encoding: str
+    format: str
+    input: file|str
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_tag: str
+    output: str
+    output_format: str
+  returns:
+    file
+custom_target
+  optargs:
+    str
+  kwargs:
+    build_always: bool
+    build_always_stale: bool
+    build_by_default: bool
+    capture: bool
+    command: list[exe|external_program|file|str]
+    console: bool
+    depend_files: list[file|str]
+    depends: list[build_tgt|custom_tgt]
+    depfile: str
+    env: dict[str]|env|list[str]
+    feed: bool
+    input: list[file|str]
+    install: bool
+    install_dir: list[str]|str
+    install_mode: list[int|str]
+    install_tag: list[str]
+    output: list[str]
+  returns:
+    custom_tgt
+debug
+  posargs:
+    bool|dict[bool|int|str]|int|list[bool|int|str]|str
+  varargs:
+    bool|dict[bool|int|str]|int|list[bool|int|str]|str
+  returns:
+    void
+declare_dependency
+  kwargs:
+    compile_args: list[str]
+    d_import_dirs: list[inc|str]
+    d_module_versions: list[str]|str
+    dependencies: list[dep]
+    include_directories: list[inc|str]
+    link_args: list[str]
+    link_whole: list[lib]
+    link_with: list[lib]
+    sources: list[file|str]
+    variables: dict[str]|list[str]
+    version: str
+  returns:
+    dep
+dependency
+  varargs:
+    str
+  kwargs:
+    allow_fallback: bool
+    default_options: list[str]
+    disabler: bool
+    fallback: list[str]|str
+    include_type: str
+    language: str
+    method: str
+    native: bool
+    not_found_message: str
+    required: bool|feature
+    static: bool
+    version: str
+  returns:
+    dep
+disabler
+  returns:
+    disabler
+environment
+  optargs:
+    dict[str]|dict[list[str]]|list[str]|str
+  kwargs:
+    method: str
+    separator: str
+  returns:
+    env
+error
+  posargs:
+    str
+  varargs:
+    str
+  returns:
+    void
+executable
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    dependencies: list[dep]
+    export_dynamic: bool
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implib: bool|str
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    pie: bool
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    win_subsystem: str
+  returns:
+    exe
+files
+  varargs:
+    str
+  returns:
+    list[file]
+find_program
+  posargs:
+    file|str
+  varargs:
+    file|str
+  kwargs:
+    dirs: list[str]
+    disabler: bool
+    native: bool
+    required: bool|feature
+    version: str
+  returns:
+    external_program
+generator
+  posargs:
+    exe|external_program
+  kwargs:
+    arguments: list[str]
+    capture: bool
+    depends: list[build_tgt|custom_tgt]
+    depfile: str
+    output: list[str]
+  returns:
+    generator
+get_option
+  posargs:
+    str
+  returns:
+    bool|feature|int|list[bool|int|str]|str
+get_variable
+  posargs:
+    str
+  optargs:
+    any
+  returns:
+    any
+import
+  posargs:
+    str
+  kwargs:
+    disabler: bool
+    required: bool|feature
+  returns:
+    module
+include_directories
+  varargs:
+    str
+  kwargs:
+    is_system: bool
+  returns:
+    inc
+install_data
+  varargs:
+    file|str
+  kwargs:
+    install_dir: str
+    install_mode: list[int|str]
+    install_tag: str
+    rename: list[str]
+    sources: list[file|str]
+  returns:
+    void
+install_emptydir
+  varargs:
+    str
+  kwargs:
+    install_mode: list[int|str]
+    install_tag: str
+  returns:
+    void
+install_headers
+  varargs:
+    file|str
+  kwargs:
+    install_dir: str
+    install_mode: list[int|str]
+    subdir: str
+  returns:
+    void
+install_man
+  varargs:
+    file|str
+  kwargs:
+    install_dir: str
+    install_mode: list[int|str]
+    locale: str
+  returns:
+    void
+install_subdir
+  posargs:
+    str
+  kwargs:
+    exclude_directories: list[str]
+    exclude_files: list[str]
+    install_dir: str
+    install_mode: list[int|str]
+    install_tag: str
+    strip_directory: bool
+  returns:
+    void
+install_symlink
+  posargs:
+    str
+  kwargs:
+    install_dir: str
+    install_tag: str
+    pointing_to: str
+  returns:
+    void
+is_disabler
+  posargs:
+    any
+  returns:
+    bool
+is_variable
+  posargs:
+    str
+  returns:
+    bool
+jar
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    dependencies: list[dep]
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    java_resources: structured_src
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    main_class: str
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    win_subsystem: str
+  returns:
+    jar
+join_paths
+  varargs:
+    str
+  returns:
+    str
+library
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    darwin_versions: int|list[str]|str
+    dependencies: list[dep]
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    pic: bool
+    prelink: bool
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    soversion: int|str
+    version: str
+    vs_module_defs: custom_idx|custom_tgt|file|str
+    win_subsystem: str
+  returns:
+    lib
+message
+  posargs:
+    bool|dict[bool|int|str]|int|list[bool|int|str]|str
+  varargs:
+    bool|dict[bool|int|str]|int|list[bool|int|str]|str
+  returns:
+    void
+project
+  posargs:
+    str
+  varargs:
+    str
+  kwargs:
+    default_options: list[str]
+    license: list[str]|str
+    meson_version: str
+    subproject_dir: str
+    version: file|str
+  returns:
+    void
+range
+  optargs:
+    int
+    int
+    int
+  returns:
+    range
+run_command
+  varargs:
+    external_program|file|str
+  kwargs:
+    capture: bool
+    check: bool
+    env: dict[str]|env|list[str]
+  returns:
+    runresult
+run_target
+  posargs:
+    str
+  kwargs:
+    command: list[custom_tgt|exe|external_program|file|str]
+    depends: list[build_tgt|custom_tgt]
+    env: dict[str]|env|list[str]
+  returns:
+    run_tgt
+set_variable
+  posargs:
+    str
+    any
+  returns:
+    void
+shared_library
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    darwin_versions: int|list[str]|str
+    dependencies: list[dep]
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    soversion: int|str
+    version: str
+    vs_module_defs: custom_idx|custom_tgt|file|str
+    win_subsystem: str
+  returns:
+    lib
+shared_module
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    dependencies: list[dep]
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    vs_module_defs: custom_idx|custom_tgt|file|str
+    win_subsystem: str
+  returns:
+    build_tgt
+static_library
+  posargs:
+    str
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    <lang>_args: list[str]
+    <lang>_pch: str
+    build_by_default: bool
+    build_rpath: str
+    d_debug: list[str]
+    d_import_dirs: list[str]
+    d_module_versions: list[str]
+    d_unittest: bool
+    dependencies: list[dep]
+    extra_files: custom_idx|custom_tgt|file|str
+    gnu_symbol_visibility: str
+    gui_app: bool
+    implicit_include_directories: bool
+    include_directories: list[inc|str]
+    install: bool
+    install_dir: str
+    install_mode: list[int|str]
+    install_rpath: str
+    install_tag: str
+    link_args: list[str]
+    link_depends: custom_idx|custom_tgt|file|str
+    link_language: str
+    link_whole: list[custom_idx|custom_tgt|lib]
+    link_with: list[custom_idx|custom_tgt|lib]
+    name_prefix: list[void]|str
+    name_suffix: list[void]|str
+    native: bool
+    objects: list[extracted_obj]
+    override_options: list[str]
+    pic: bool
+    prelink: bool
+    rust_crate_type: str
+    sources: custom_idx|custom_tgt|file|generated_list|str|structured_src
+    win_subsystem: str
+  returns:
+    lib
+structured_sources
+  posargs:
+    list[custom_idx|custom_tgt|file|generated_list|str]
+  optargs:
+    dict[custom_idx|custom_tgt|file|generated_list|str]
+  returns:
+    structured_src
+subdir
+  posargs:
+    str
+  kwargs:
+    if_found: list[dep]
+  returns:
+    void
+subdir_done
+  returns:
+    void
+subproject
+  posargs:
+    str
+  kwargs:
+    default_options: list[str]
+    required: bool|feature
+    version: str
+  returns:
+    subproject
+summary
+  posargs:
+    dict[bool|dep|external_program|int|list[bool|dep|external_program|int|str]|str]|str
+  optargs:
+    bool|dep|external_program|int|list[bool|dep|external_program|int|str]|str
+  kwargs:
+    bool_yn: bool
+    list_sep: str
+    section: str
+  returns:
+    void
+test
+  posargs:
+    str
+    exe|external_program|file|jar
+  kwargs:
+    args: list[file|str|tgt]
+    depends: list[build_tgt|custom_tgt]
+    env: dict[str]|env|list[str]
+    is_parallel: bool
+    priority: int
+    protocol: str
+    should_fail: bool
+    suite: list[str]|str
+    timeout: int
+    verbose: bool
+    workdir: str
+  returns:
+    void
+unset_variable
+  posargs:
+    str
+  returns:
+    void
+vcs_tag
+  kwargs:
+    command: list[custom_tgt|exe|external_program|file|str]
+    fallback: str
+    input: str
+    output: str
+    replace_string: str
+  returns:
+    custom_tgt
+warning
+  posargs:
+    bool|dict[bool|int|str]|int|list[bool|int|str]|str
+  varargs:
+    bool|dict[bool|int|str]|int|list[bool|int|str]|str
+  returns:
+    void
+bool.to_int
+  returns:
+    int
+bool.to_string
+  optargs:
+    str
+    str
+  returns:
+    str
+both_libs.get_shared_lib
+  returns:
+    lib
+both_libs.get_static_lib
+  returns:
+    lib
+build_machine.cpu
+  returns:
+    str
+build_machine.cpu_family
+  returns:
+    str
+build_machine.endian
+  returns:
+    str
+build_machine.system
+  returns:
+    str
+build_tgt.extract_all_objects
+  kwargs:
+    recursive: bool
+  returns:
+    extracted_obj
+build_tgt.extract_objects
+  varargs:
+    file|str
+  returns:
+    extracted_obj
+build_tgt.found
+  returns:
+    bool
+build_tgt.full_path
+  returns:
+    str
+build_tgt.name
+  returns:
+    str
+build_tgt.path
+  returns:
+    str
+build_tgt.private_dir_include
+  returns:
+    inc
+cfg_data.get
+  posargs:
+    str
+  optargs:
+    bool|int|str
+  returns:
+    bool|int|str
+cfg_data.get_unquoted
+  posargs:
+    str
+  optargs:
+    bool|int|str
+  returns:
+    bool|int|str
+cfg_data.has
+  posargs:
+    str
+  returns:
+    bool
+cfg_data.keys
+  returns:
+    list[str]
+cfg_data.merge_from
+  posargs:
+    cfg_data
+  returns:
+    void
+cfg_data.set
+  posargs:
+    str
+    bool|int|str
+  kwargs:
+    description: str
+  returns:
+    void
+cfg_data.set10
+  posargs:
+    str
+    bool|int
+  kwargs:
+    description: str
+  returns:
+    void
+cfg_data.set_quoted
+  posargs:
+    str
+    bool|int|str
+  kwargs:
+    description: str
+  returns:
+    void
+compiler.alignment
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    prefix: str
+  returns:
+    int
+compiler.check_header
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+    required: bool|feature
+  returns:
+    bool
+compiler.cmd_array
+  returns:
+    list[str]
+compiler.compiles
+  posargs:
+    file|str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    name: str
+    no_builtin_args: bool
+  returns:
+    bool
+compiler.compute_int
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    guess: int
+    high: int
+    include_directories: inc|list[inc]
+    low: int
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    int
+compiler.find_library
+  posargs:
+    str
+  kwargs:
+    dirs: list[str]
+    disabler: bool
+    has_headers: list[str]
+    header_args: list[str]
+    header_dependencies: dep|list[dep]
+    header_include_directories: inc|list[inc]
+    header_no_builtin_args: bool
+    header_prefix: str
+    required: bool|feature
+    static: bool
+  returns:
+    dep
+compiler.first_supported_argument
+  varargs:
+    str
+  returns:
+    list[str]
+compiler.first_supported_link_argument
+  varargs:
+    str
+  returns:
+    list[str]
+compiler.get_argument_syntax
+  returns:
+    str
+compiler.get_define
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    str
+compiler.get_id
+  returns:
+    str
+compiler.get_linker_id
+  returns:
+    str
+compiler.get_supported_arguments
+  varargs:
+    str
+  kwargs:
+    checked: str
+  returns:
+    list[str]
+compiler.get_supported_function_attributes
+  returns:
+    list[str]
+compiler.get_supported_link_arguments
+  varargs:
+    str
+  returns:
+    list[str]
+compiler.has_argument
+  posargs:
+    str
+  returns:
+    bool
+compiler.has_function
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    bool
+compiler.has_function_attribute
+  posargs:
+    str
+  returns:
+    bool
+compiler.has_header
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+    required: bool|feature
+  returns:
+    bool
+compiler.has_header_symbol
+  posargs:
+    str
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+    required: bool|feature
+  returns:
+    bool
+compiler.has_link_argument
+  posargs:
+    str
+  returns:
+    bool
+compiler.has_member
+  posargs:
+    str
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    bool
+compiler.has_members
+  posargs:
+    str
+  varargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    bool
+compiler.has_multi_arguments
+  varargs:
+    str
+  returns:
+    bool
+compiler.has_multi_link_arguments
+  varargs:
+    str
+  returns:
+    bool
+compiler.has_type
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    bool
+compiler.links
+  posargs:
+    file|str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    name: str
+    no_builtin_args: bool
+  returns:
+    bool
+compiler.run
+  posargs:
+    file|str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    name: str
+    no_builtin_args: bool
+  returns:
+    runresult
+compiler.sizeof
+  posargs:
+    str
+  kwargs:
+    args: list[str]
+    dependencies: dep|list[dep]
+    include_directories: inc|list[inc]
+    no_builtin_args: bool
+    prefix: str
+  returns:
+    int
+compiler.symbols_have_underscore_prefix
+  returns:
+    bool
+compiler.version
+  returns:
+    str
+custom_idx.full_path
+  returns:
+    str
+custom_tgt.[index]
+  returns:
+    custom_idx
+custom_tgt.full_path
+  returns:
+    str
+custom_tgt.to_list
+  returns:
+    list[custom_idx]
+dep.as_link_whole
+  returns:
+    dep
+dep.as_system
+  optargs:
+    str
+  returns:
+    dep
+dep.found
+  returns:
+    bool
+dep.get_configtool_variable
+  posargs:
+    str
+  returns:
+    str
+dep.get_pkgconfig_variable
+  posargs:
+    str
+  kwargs:
+    default: str
+    define_variable: list[str]
+  returns:
+    str
+dep.get_variable
+  optargs:
+    str
+  kwargs:
+    cmake: str
+    configtool: str
+    default_value: str
+    internal: str
+    pkgconfig: str
+    pkgconfig_define: list[str]
+  returns:
+    str
+dep.include_type
+  returns:
+    str
+dep.name
+  returns:
+    str
+dep.partial_dependency
+  kwargs:
+    compile_args: bool
+    includes: bool
+    link_args: bool
+    links: bool
+    sources: bool
+  returns:
+    dep
+dep.type_name
+  returns:
+    str
+dep.version
+  returns:
+    str
+dict.get
+  posargs:
+    str
+  optargs:
+    any
+  returns:
+    any
+dict.has_key
+  posargs:
+    str
+  returns:
+    bool
+dict.keys
+  returns:
+    list[str]
+disabler.found
+  returns:
+    bool
+env.append
+  posargs:
+    str
+  varargs:
+    str
+  kwargs:
+    separator: str
+  returns:
+    void
+env.prepend
+  posargs:
+    str
+  varargs:
+    str
+  kwargs:
+    separator: str
+  returns:
+    void
+env.set
+  posargs:
+    str
+  varargs:
+    str
+  kwargs:
+    separator: str
+  returns:
+    void
+external_program.found
+  returns:
+    bool
+external_program.full_path
+  returns:
+    str
+external_program.path
+  returns:
+    str
+external_program.version
+  returns:
+    str
+feature.allowed
+  returns:
+    bool
+feature.auto
+  returns:
+    bool
+feature.disable_auto_if
+  posargs:
+    bool
+  returns:
+    feature
+feature.disabled
+  returns:
+    bool
+feature.enabled
+  returns:
+    bool
+feature.require
+  posargs:
+    bool
+  kwargs:
+    error_message: str
+  returns:
+    feature
+generator.process
+  varargs:
+    custom_idx|custom_tgt|file|generated_list|str
+  kwargs:
+    extra_args: list[str]
+    preserve_path_from: str
+  returns:
+    generated_list
+int.is_even
+  returns:
+    bool
+int.is_odd
+  returns:
+    bool
+int.to_string
+  returns:
+    str
+list.contains
+  posargs:
+    any
+  returns:
+    bool
+list.get
+  posargs:
+    int
+  optargs:
+    any
+  returns:
+    any
+list.length
+  returns:
+    int
+meson.add_devenv
+  posargs:
+    dict[str]|dict[list[str]]|env|list[str]|str
+  kwargs:
+    method: str
+    separator: str
+  returns:
+    void
+meson.add_dist_script
+  posargs:
+    external_program|file|str
+  varargs:
+    external_program|file|str
+  returns:
+    void
+meson.add_install_script
+  posargs:
+    custom_idx|custom_tgt|exe|external_program|file|str
+  varargs:
+    custom_idx|custom_tgt|exe|external_program|file|str
+  kwargs:
+    install_tag: str
+    skip_if_destdir: bool
+  returns:
+    void
+meson.add_postconf_script
+  posargs:
+    external_program|file|str
+  varargs:
+    external_program|file|str
+  returns:
+    void
+meson.backend
+  returns:
+    str
+meson.build_root
+  returns:
+    str
+meson.can_run_host_binaries
+  returns:
+    bool
+meson.current_build_dir
+  returns:
+    str
+meson.current_source_dir
+  returns:
+    str
+meson.get_compiler
+  posargs:
+    str
+  kwargs:
+    native: bool
+  returns:
+    compiler
+meson.get_cross_property
+  posargs:
+    str
+  optargs:
+    any
+  returns:
+    any
+meson.get_external_property
+  posargs:
+    str
+  optargs:
+    any
+  kwargs:
+    native: bool
+  returns:
+    any
+meson.global_build_root
+  returns:
+    str
+meson.global_source_root
+  returns:
+    str
+meson.has_exe_wrapper
+  returns:
+    bool
+meson.has_external_property
+  posargs:
+    str
+  kwargs:
+    native: bool
+  returns:
+    bool
+meson.install_dependency_manifest
+  posargs:
+    str
+  returns:
+    void
+meson.is_cross_build
+  returns:
+    bool
+meson.is_subproject
+  returns:
+    bool
+meson.is_unity
+  returns:
+    bool
+meson.override_dependency
+  posargs:
+    str
+    dep
+  kwargs:
+    native: bool
+    static: bool
+  returns:
+    void
+meson.override_find_program
+  posargs:
+    str
+    exe|external_program|file
+  returns:
+    void
+meson.project_build_root
+  returns:
+    str
+meson.project_license
+  returns:
+    list[str]
+meson.project_name
+  returns:
+    str
+meson.project_source_root
+  returns:
+    str
+meson.project_version
+  returns:
+    str
+meson.source_root
+  returns:
+    str
+meson.version
+  returns:
+    str
+module.found
+  returns:
+    bool
+runresult.compiled
+  returns:
+    bool
+runresult.returncode
+  returns:
+    int
+runresult.stderr
+  returns:
+    str
+runresult.stdout
+  returns:
+    str
+str.contains
+  posargs:
+    str
+  returns:
+    bool
+str.endswith
+  posargs:
+    str
+  returns:
+    bool
+str.format
+  posargs:
+    str
+  varargs:
+    bool|int|str
+  returns:
+    str
+str.join
+  varargs:
+    str
+  returns:
+    str
+str.replace
+  posargs:
+    str
+    str
+  returns:
+    str
+str.split
+  optargs:
+    str
+  returns:
+    list[str]
+str.startswith
+  posargs:
+    str
+  returns:
+    bool
+str.strip
+  optargs:
+    str
+  returns:
+    str
+str.substring
+  optargs:
+    int
+    int
+  returns:
+    str
+str.to_int
+  returns:
+    int
+str.to_lower
+  returns:
+    str
+str.to_upper
+  returns:
+    str
+str.underscorify
+  returns:
+    str
+str.version_compare
+  posargs:
+    str
+  returns:
+    bool
+subproject.found
+  returns:
+    bool
+subproject.get_variable
+  posargs:
+    str
+  optargs:
+    any
+  returns:
+    any
